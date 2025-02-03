@@ -18,7 +18,11 @@ docker run -d \
   --name postgres-container \
   --network keycloak-react-network \
   -v "$HOME"/Data/keycloak-react:/var/lib/postgresql/data \
-  postgres-image
+  postgres-image 
+
+
 
 # Display PostgresSQL logs
 docker logs -f postgres-container
+
+
