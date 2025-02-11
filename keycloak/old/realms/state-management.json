@@ -1,0 +1,38 @@
+{
+    "realm": "master",
+    "enabled": true,
+    "clients": [
+      {
+        "clientId": "imported-client",
+        "enabled": true,
+        "protocol": "openid-connect",
+        "fullScopeAllowed": false
+      }
+    ],
+    "roles": {
+      "realm": [
+        {
+          "name": "my-role",
+          "description": "A test role"
+        }
+      ]
+    },
+    "clientScopes": [
+      {
+        "name": "custom-scope",
+        "description": "Custom client scope",
+        "protocol": "openid-connect",
+        "attributes": {
+          "include.in.token.scope": "true"
+        }
+      }
+    ],
+    "scopeMappings": [
+      {
+        "client": "imported-client",
+        "roles": [
+          "my-role"
+        ]
+      }
+    ]
+  }

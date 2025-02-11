@@ -23,6 +23,6 @@ docker run -d \
 
 
 # Display PostgresSQL logs
-docker logs -f postgres-container
+# docker logs -f postgres-container
 
 

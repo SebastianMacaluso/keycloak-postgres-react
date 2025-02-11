@@ -1,5 +1,5 @@
 # Base image
-FROM quay.io/keycloak/keycloak:latest
+FROM quay.io/keycloak/keycloak:26.1.2
 
 # Set environment variables
 ENV KEYCLOAK_ADMIN=admin

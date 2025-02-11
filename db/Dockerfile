@@ -1,5 +1,5 @@
 # Base image for PostgreSQL
-FROM postgres:latest
+FROM postgres:17.2
 
 # Set environment variables
 ENV POSTGRES_USER=keycloak

@@ -1,11 +1,11 @@
-# keycloak-react
+# keycloak-react implementation for login/logout/registration of website
 
-We have implemente a single page application where a public section is always shown
+We have implemented a single page application where a public section is always shown
 but a protected section is only shown when the user logs in using keycloak.
 
 A keycloak server is deployed using Docker with an external DB for conf storing.
 A Postgres db is deployed using Docker with external volume.
-Keycloak conf can be exported with simple dump.
+Keycloak conf can be exported with simple dump to export the database to a different machine.
 
 Proper scripts are provided for deploying db, keycloak and web.
 
@@ -16,8 +16,7 @@ The single page application is sent to browser with all the contents,
 including the protected section. Any advance user could bypass the credentials check.
 Despite the fact that credentials are check in the backend, the page is insecure.
 
-For a secure configuration, content should be sent to the browser
-only when the credentials check is done.
+For a secure configuration, content should be sent to the browser only when the credentials check is done.
 An API could be use to serve the protected content.
 
 
@@ -27,15 +26,54 @@ An API could be use to serve the protected content.
 # TODO: Add mechanism for creating protected contena (i.e. Express backend (node.js) + mongo)
 
 
-Go to db directory
-1) Run "bash local_bild.sh"
-Go to keycloak dir
-2) Run "bash local_build.sh"
-3) If we want to retrieve the dataset run from the db dir "bash restore.sh"
-4) Open the local host
- http://localhost:8080/realms/master/protocol/openid-connect/auth?client_id=security-admin-console&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Fadmin%2Fmaster%2Fconsole%2F&state=de5e0e6b-8555-4640-9751-fa9e3ecd4d48&response_mode=query&response_type=code&scope=openid&nonce=13e0d455-908f-4202-ac96-917a8b278538&code_challenge=DOSEBEHD2N2KoRzZ2g0n9Bdpvnshev2c-yGucO8_URU&code_challenge_method=S256
- Mode retails here https://www.keycloak.org/getting-started/getting-started-docker
- 
- Work here directly on the browser
-5) before killing the database container, make a backup
-GO to dr dir and run "bash backup.sh"
+To launch the website with keycloak authentication and postgres database, go to the main dir and
+`sh launch_postgres_keycloak_reactapp.sh`
+
+
+## Keycloack and Postgres db:
+
+Keycloak and postgres db are implemented over Docker, running on a common network: keycloak-react-network
+
+a) Before killing the database container, if we want to restore the db in a different machine, make a backup
+`bash db/backup.sh`
+b) To retrieve the dataset into a different machine, run in the `db` dir (not tested)
+`bash db/restore.sh`
+
+### Keycloak configuration file
+There is a configuration file that can be modified:
+`realm-export.json`
+
+Keycloak session can be opened at
+[http://localhost:8080/](http://localhost:8080/)
+
+username: admin
+password: admin
+
+## React
+The react app is launched at 
+[http://localhost:3000/](http://localhost:3000/)
+
+From there, the login or registratoion of a new user can be done through keycloak
+
+## Installation requirements
+
+**Install**
+- Docker
+- npm
+
+
+### React
+
+To create a new app 
+1- `npx create-react-app my_new_app`
+
+Then change the version of react to 18 if getting an error in `package.json`
+2- Go to root dir of the app and run
+
+`npm install`
+`npm run dev`
+
+`npm install web-vitals`
+
+`npm start`
+
