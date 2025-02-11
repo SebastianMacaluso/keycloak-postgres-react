@@ -21,8 +21,11 @@ An API could be use to serve the protected content.
 
 
  **TODO**: Modify skillab client to avoid localhost in redirect and post logout urls
+
  **TODO**: Add TLS. A certificate is needed.
+
  **TODO**: Add API for serving protected content.
+ 
  **TODO**: Add mechanism for creating protected contena (i.e. Express backend (node.js) + mongo)
 
 
