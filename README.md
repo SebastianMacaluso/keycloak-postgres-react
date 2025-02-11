@@ -20,10 +20,10 @@ For a secure configuration, content should be sent to the browser only when the 
 An API could be use to serve the protected content.
 
 
-# TODO: Modify skillab client to avoid localhost in redirect and post logout urls
-# TODO: Add TLS. A certificate is needed.
-# TODO: Add API for serving protected content.
-# TODO: Add mechanism for creating protected contena (i.e. Express backend (node.js) + mongo)
+ **TODO**: Modify skillab client to avoid localhost in redirect and post logout urls
+ **TODO**: Add TLS. A certificate is needed.
+ **TODO**: Add API for serving protected content.
+ **TODO**: Add mechanism for creating protected contena (i.e. Express backend (node.js) + mongo)
 
 
 To launch the website with keycloak authentication and postgres database, go to the main dir and
@@ -65,9 +65,11 @@ From there, the login or registratoion of a new user can be done through keycloa
 ### React
 
 To create a new app 
+
 1- `npx create-react-app my_new_app`
 
 Then change the version of react to 18 if getting an error in `package.json`
+
 2- Go to root dir of the app and run
 
 `npm install`
