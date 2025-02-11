@@ -25,12 +25,13 @@ An API could be use to serve the protected content.
  **TODO**: Add TLS. A certificate is needed.
 
  **TODO**: Add API for serving protected content.
- 
+
  **TODO**: Add mechanism for creating protected contena (i.e. Express backend (node.js) + mongo)
 
 
-To launch the website with keycloak authentication and postgres database, go to the main dir and
-`sh launch_postgres_keycloak_reactapp.sh`
+To launch the website with keycloak authentication and postgres database, go to the main dir:
+
+`bash launch_postgres_keycloak_reactapp.sh`
 
 
 ## Keycloack and Postgres db:
@@ -38,12 +39,16 @@ To launch the website with keycloak authentication and postgres database, go to 
 Keycloak and postgres db are implemented over Docker, running on a common network: keycloak-react-network
 
 a) Before killing the database container, if we want to restore the db in a different machine, make a backup
+
 `bash db/backup.sh`
+
 b) To retrieve the dataset into a different machine, run in the `db` dir (not tested)
+
 `bash db/restore.sh`
 
 ### Keycloak configuration file
 There is a configuration file that can be modified:
+
 `realm-export.json`
 
 Keycloak session can be opened at
