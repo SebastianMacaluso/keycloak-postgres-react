@@ -51,17 +51,18 @@ There is a configuration file that can be modified:
 
 `realm-export.json`
 
-Keycloak session can be opened at
+The Keycloak session can be opened at
 [http://localhost:8080/](http://localhost:8080/)
 
 username: admin
+
 password: admin
 
 ## React
 The react app is launched at 
 [http://localhost:3000/](http://localhost:3000/)
 
-From there, the login or registratoion of a new user can be done through keycloak
+From there, the login or registration of a new user can be done through keycloak
 
 ## Installation requirements
 
@@ -72,7 +73,7 @@ From there, the login or registratoion of a new user can be done through keycloa
 
 ### React
 
-To create a new app 
+To create a new app (for a new project)
 
 1- `npx create-react-app my_new_app`
 
